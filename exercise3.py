@@ -1,41 +1,30 @@
-# Audrey Tarronas (ateauds)
-# COP2002.0T1
-# 02/11/2025
-# Exercise 3: If statements
-# Creating Python program using if statements to create a program to find manufacturer from hex digits
+#Victor Sosa (VictorSosaRivero)
+#
+#Febrary 11, 2025
+#MAC Manufacturer Program
+#This program determine who the manufacturer is based on the 3 first Hex number of the MAC address
 
-# Variables
-# Setting up which manufacturer has each hex digit (used for myself)
-
-oracle = "00:00:17"
-intelCorporation = "00:07:E9"
-microsoftCorp = "04:27:28"
-appleInc = "04:26:65"
-huawaiTech = "04:33:89"
-ciscoSystems = "00:00:0C"
-
-# Interface
+#Creating a List with the regitered Hex values
+HexValues=["00:00:17","00:07:E9","04:27:28","04:26:65","04:33:89","00:00:0C"]
 
 print("MAC Manufacturer Program")
 print("------------------------\n")
 
-# Command for user to input hex digit to run program
+#User imput the Hex values that want to check
+UserImput=input("Enter the first 6 hex values of the MAC address (format as XX:XX:XX): ").upper()
 
-hexDigit = input("Enter the first 6 hex values of the MAC address (format as XX:XX:XX): ")
-
-# If statements to sort through each hex digit for the program
-
-if hexDigit == "00:00:17":
-    print("For", hexDigit, "the MAC manufacturer is Oracle.")
-elif hexDigit == "00:07:E9":
-    print("For", hexDigit, "the MAC manufacturer is Intel Corporation.")
-elif hexDigit == "04:27:28":
-    print("For", hexDigit, "the MAC manufacturer is Microsoft Corporation.")
-elif hexDigit == "04:26:65":
-    print("For", hexDigit, "the MAC manufacturer is Apple, Inc.")
-elif hexDigit == "04:33:89":
-    print("For", hexDigit, "the MAC manufacturer is Huawei Technologies Co., Inc.")
-elif hexDigit == "00:00:0C":
-    print("For", hexDigit, "the MAC manufacturer is Cisco Systems, Inc.")
+#Use if, elif, else statements to compare the User imput with the Hex values of the list and print the result
+if UserImput==HexValues[0]:
+    print(f"For {UserImput} the MAC manufacturer is Oracle")
+elif UserImput==HexValues[1]:
+    print(f"For {UserImput} the MAC manufacturer is Intel Corporation")
+elif UserImput==HexValues[2]:
+    print(f"For {UserImput} the MAC manufacturer is Microsoft Corporation")
+elif UserImput==HexValues[3]:
+    print(f"For {UserImput} the MAC manufacturer is Apple, Inc.")
+elif UserImput==HexValues[4]:
+    print(f"For {UserImput} the MAC manufacturer is Huawei Technologies Co.,Ltd")
+elif UserImput==HexValues[5]:
+    print(f"For {UserImput} the MAC manufacturer is Cisco Systems, Inc")
 else:
-    print("For", hexDigit, "the MAC manufacturer is Unknown.")
+    print(f"For {UserImput} the MAC manufacturer is Unknown")
