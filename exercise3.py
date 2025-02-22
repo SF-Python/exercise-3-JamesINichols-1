@@ -1,34 +1,29 @@
-# Hannah Raynard (GHUN DarkenedI)
-# COP 2002 OT1
-# 2025-02-14
-# MAC manufacturer program
-# This program will prompt the user for input then match it to specific variables
+##Sebastian Brant (sbrantstudent)
+##COP2002.0T1
+##February 12, 2025
+##Exercise 3: If Statements
+##Takes hex digits from user input and prints the corresponding manufacturer name.
 
-# program start
-print("MAC Manufacterer Program")
-print("------------------------")
-print()
-# Prompts user for input
-userPrompt=input("Enter the first 6 hex values of the MAC address (format as XX:XX:XX): ")
 
-# Prints prompt to the screen
-print(userPrompt)
+#Make two lists, for hexadecimal and manufacturer.
+hexCode=["00:00:17","00:07:E9","04:27:28","04:26:65","04:33:89","00:00:0C"]
+manufacturerName=["Oracle","Intel Corporation","Microsoft Corporation","Apple, Inc.","Huawei Technologies Co.,Ltd","Cisco Systems, Inc"]
 
-# List for keeping track of all the manufacturers
-manufacturerList=["Oracle","Intel Corporation", "Microsoft Corporation","Apple, Inc.", "Huawei Technologies Co., Ltd", "Cisco Systems, Inc"]
+#Input statement draws from the user input.
+userInput=input("Enter the first 6 hex values of the MAC address: ")
 
-# if/elif/else statements
-if userPrompt=="00:00:17" :
-    print(f"for {userPrompt} the MAC manufacterer is {manufacturerList[0]}")
-elif userPrompt=="00:07:E9" :
-    print(f"for {userPrompt} the MAC manufacterer is {manufacturerList[1]}")
-elif userPrompt=="04:27:28" :
-    print(f"for {userPrompt} the MAC manufacterer is {manufacturerList[2]}")
-elif userPrompt=="04:26:65" :
-    print(f"for {userPrompt} the MAC manufacterer is {manufacturerList[3]}")
-elif userPrompt=="04:33:89" :
-    print(f"for {userPrompt} the MAC manufacterer is {manufacturerList[4]}")
-elif userPrompt=="00:00:0C" :
-    print(f"for {userPrompt} the MAC manufacterer is {manufacturerList[5]}")
-else:
-    print("Not found.")
+#Conditional boolean statement to be used in for loop.
+found=False
+
+#For loop the iterates through the hexCode list to match the user input, then print the manufacturer if a match is found.
+for i in range(len(hexCode)):
+    if userInput==hexCode[i]:
+        print(manufacturerName[i])
+        found=True
+        break
+
+#If there is no match, the code prints "Unknown".
+if not found:
+    print("Unknown")
+
+
