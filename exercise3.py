@@ -1,29 +1,33 @@
-##Sebastian Brant (sbrantstudent)
-##COP2002.0T1
-##February 12, 2025
-##Exercise 3: If Statements
-##Takes hex digits from user input and prints the corresponding manufacturer name.
+# Jeremiah Riche
+# 2/17/2025 - 11:37PM
+# Exercise 3: If Statements
+def main():
+    print("MAC Manufacturer Program")
+    print("------------------------")
+    print()
 
+    # Prompts.
+    mac_address = input("Enter the first 6 hex values of the MAC address (format as XX:XX:XX): ")
 
-#Make two lists, for hexadecimal and manufacturer.
-hexCode=["00:00:17","00:07:E9","04:27:28","04:26:65","04:33:89","00:00:0C"]
-manufacturerName=["Oracle","Intel Corporation","Microsoft Corporation","Apple, Inc.","Huawei Technologies Co.,Ltd","Cisco Systems, Inc"]
+    #Manufacturer's
+    manufacturer = "Unknown"
 
-#Input statement draws from the user input.
-userInput=input("Enter the first 6 hex values of the MAC address: ")
+    # MAC-ADRESSES
+    if mac_address == "00:00:17":
+        manufacturer = "Oracle"
+    if mac_address == "00:07:E9":
+        manufacturer = "Intel Corporation"
+    if mac_address == "04:27:28":
+        manufacturer = "Microsoft Corporation"
+    if mac_address == "04:26:65":
+        manufacturer = "Apple, Inc."
+    if mac_address == "04:33:89":
+        manufacturer = "Huawei Technologies Co., Ltd"
+    if mac_address == "00:00:0C":
+        manufacturer = "Cisco Systems, Inc"
 
-#Conditional boolean statement to be used in for loop.
-found=False
+    #Result's
+    print(f"For {mac_address} the MAC manufacturer is {manufacturer}")
 
-#For loop the iterates through the hexCode list to match the user input, then print the manufacturer if a match is found.
-for i in range(len(hexCode)):
-    if userInput==hexCode[i]:
-        print(manufacturerName[i])
-        found=True
-        break
-
-#If there is no match, the code prints "Unknown".
-if not found:
-    print("Unknown")
-
-
+if __name__ == "__main__":
+    main()
